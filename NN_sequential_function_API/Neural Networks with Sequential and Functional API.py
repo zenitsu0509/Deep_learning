@@ -58,14 +58,11 @@ x = layers.Dense(512,activation = 'sigmoid',name = "first_layers")(inputs)
 x = layers.Dense(256,activation = 'sigmoid',name = 'second_layers')(x)
 outputs = layers.Dense(10,activation = 'softmax')(x)
 model = keras.Model(inputs=inputs,outputs = outputs)
-opt = ['Gradient_Descent','Mometum','Adagrad','RMSprop','Adam']
-for i in opt:
-
-  model.compile(
+model.compile(
       loss = keras.losses.SparseCategoricalCrossentropy(from_logits = False),
       optimizer = keras.optimizers.Adam(learning_rate = 0.01),
       metrics = ["accuracy"],
-  )
+)
 
 model.fit(x_train,y_train,batch_size = 32,epochs = 5,verbose = 2)
 model.evaluate(x_test,y_test,batch_size = 32,verbose = 2)
