@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 df = pd.read_csv("/content/diabetes.csv")
-df.head()
+print(df.head())
 
 X = df.drop(['Outcome'],axis = 1)
 y = df['Outcome']
