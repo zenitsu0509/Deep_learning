@@ -57,7 +57,6 @@ outputs = layers.Dense(1, activation='linear')(x)
 
 model = keras.Model(inputs=inputs, outputs=outputs)
 
-# Compile the model with an appropriate loss function for regression
 model.compile(
     loss = 'binary_crossentropy',
     optimizer=keras.optimizers.Adam(learning_rate=0.001),
