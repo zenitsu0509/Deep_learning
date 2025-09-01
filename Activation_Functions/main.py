@@ -17,7 +17,7 @@ def softmax(x):
     e_x = np.exp(x - np.max(x))
     return e_x / e_x.sum(axis=0)
 
-# Generate sample data
+
 x = np.linspace(-10, 10, 400)
 
 # Compute activation functions
